@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="Kaccfylhf">
+  <database-model serializer="dbm" dbms="CASSANDRA" family-id="CASSANDRA" format-version="4.20">
+    <root id="1">
+      <ServerVersion>3.11.8</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="billing_emulator">
+      <Replication>{&apos;class&apos;: &apos;org.apache.cassandra.locator.SimpleStrategy&apos;, &apos;replication_factor&apos;: &apos;3&apos;}</Replication>
+    </schema>
+    <schema id="3" parent="1" name="document_receiver">
+      <Replication>{&apos;class&apos;: &apos;org.apache.cassandra.locator.SimpleStrategy&apos;, &apos;replication_factor&apos;: &apos;3&apos;}</Replication>
+    </schema>
+    <schema id="4" parent="1" name="document_signer">
+      <Replication>{&apos;class&apos;: &apos;org.apache.cassandra.locator.SimpleStrategy&apos;, &apos;replication_factor&apos;: &apos;3&apos;}</Replication>
+    </schema>
+    <schema id="5" parent="1" name="document_storage">
+      <Replication>{&apos;class&apos;: &apos;org.apache.cassandra.locator.SimpleStrategy&apos;, &apos;replication_factor&apos;: &apos;3&apos;}</Replication>
+    </schema>
+    <schema id="6" parent="1" name="kkt_int01">
+      <Replication>{&apos;class&apos;: &apos;org.apache.cassandra.locator.SimpleStrategy&apos;, &apos;replication_factor&apos;: &apos;3&apos;}</Replication>
+    </schema>
+    <schema id="7" parent="1" name="receipt_server">
+      <Replication>{&apos;class&apos;: &apos;org.apache.cassandra.locator.SimpleStrategy&apos;, &apos;replication_factor&apos;: &apos;3&apos;}</Replication>
+    </schema>
+    <schema id="8" parent="1" name="rtng_int01">
+      <Replication>{&apos;class&apos;: &apos;org.apache.cassandra.locator.SimpleStrategy&apos;, &apos;replication_factor&apos;: &apos;3&apos;}</Replication>
+    </schema>
+    <schema id="9" parent="1" name="system">
+      <Replication>{&apos;class&apos;: &apos;org.apache.cassandra.locator.LocalStrategy&apos;}</Replication>
+    </schema>
+    <schema id="10" parent="1" name="system_auth">
+      <Replication>{&apos;class&apos;: &apos;org.apache.cassandra.locator.SimpleStrategy&apos;, &apos;replication_factor&apos;: &apos;1&apos;}</Replication>
+    </schema>
+    <schema id="11" parent="1" name="system_distributed">
+      <Replication>{&apos;class&apos;: &apos;org.apache.cassandra.locator.SimpleStrategy&apos;, &apos;replication_factor&apos;: &apos;3&apos;}</Replication>
+    </schema>
+    <schema id="12" parent="1" name="system_schema">
+      <Replication>{&apos;class&apos;: &apos;org.apache.cassandra.locator.LocalStrategy&apos;}</Replication>
+    </schema>
+    <schema id="13" parent="1" name="system_traces">
+      <Replication>{&apos;class&apos;: &apos;org.apache.cassandra.locator.SimpleStrategy&apos;, &apos;replication_factor&apos;: &apos;2&apos;}</Replication>
+    </schema>
+    <schema id="14" parent="1" name="tx_manager">
+      <Replication>{&apos;class&apos;: &apos;org.apache.cassandra.locator.SimpleStrategy&apos;, &apos;replication_factor&apos;: &apos;3&apos;}</Replication>
+    </schema>
+    <schema id="15" parent="1" name="workflow_processor">
+      <Replication>{&apos;class&apos;: &apos;org.apache.cassandra.locator.SimpleStrategy&apos;, &apos;replication_factor&apos;: &apos;3&apos;}</Replication>
+    </schema>
+    <role id="16" parent="1" name="cassandra">
+      <SuperRole>1</SuperRole>
+      <CanLogin>1</CanLogin>
+    </role>
+    <table id="17" parent="8" name="aggregation_emission">
+      <Caching>{&apos;keys&apos;: &apos;NONE&apos;, &apos;rows_per_partition&apos;: &apos;NONE&apos;}</Caching>
+      <Compaction>{&apos;class&apos;: &apos;org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy&apos;, &apos;max_threshold&apos;: &apos;32&apos;, &apos;min_threshold&apos;: &apos;4&apos;}</Compaction>
+      <Compression>{&apos;chunk_length_in_kb&apos;: &apos;64&apos;, &apos;class&apos;: &apos;org.apache.cassandra.io.compress.LZ4Compressor&apos;}</Compression>
+      <DclocalReadRepairChance>0.1</DclocalReadRepairChance>
+      <SpeculativeRetry>NONE</SpeculativeRetry>
+      <MaxIndexInterval>4096</MaxIndexInterval>
+      <MinIndexInterval>256</MinIndexInterval>
+    </table>
+    <table id="18" parent="8" name="cis_emission">
+      <Caching>{&apos;keys&apos;: &apos;NONE&apos;, &apos;rows_per_partition&apos;: &apos;NONE&apos;}</Caching>
+      <Compaction>{&apos;class&apos;: &apos;org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy&apos;, &apos;max_threshold&apos;: &apos;32&apos;, &apos;min_threshold&apos;: &apos;4&apos;}</Compaction>
+      <Compression>{&apos;chunk_length_in_kb&apos;: &apos;64&apos;, &apos;class&apos;: &apos;org.apache.cassandra.io.compress.LZ4Compressor&apos;}</Compression>
+      <DclocalReadRepairChance>0.1</DclocalReadRepairChance>
+      <SpeculativeRetry>NONE</SpeculativeRetry>
+      <MaxIndexInterval>4096</MaxIndexInterval>
+      <MinIndexInterval>256</MinIndexInterval>
+    </table>
+    <table id="19" parent="8" name="cis_emitted">
+      <Caching>{&apos;keys&apos;: &apos;ALL&apos;, &apos;rows_per_partition&apos;: &apos;100&apos;}</Caching>
+      <Compaction>{&apos;class&apos;: &apos;org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy&apos;, &apos;max_threshold&apos;: &apos;32&apos;, &apos;min_threshold&apos;: &apos;4&apos;}</Compaction>
+      <Compression>{&apos;chunk_length_in_kb&apos;: &apos;128&apos;, &apos;class&apos;: &apos;org.apache.cassandra.io.compress.LZ4Compressor&apos;}</Compression>
+      <DclocalReadRepairChance>0.1</DclocalReadRepairChance>
+      <SpeculativeRetry>NONE</SpeculativeRetry>
+    </table>
+    <table id="20" parent="8" name="cis_order">
+      <BloomFilterFpChance>0.1</BloomFilterFpChance>
+      <Caching>{&apos;keys&apos;: &apos;ALL&apos;, &apos;rows_per_partition&apos;: &apos;1&apos;}</Caching>
+      <Compaction>{&apos;class&apos;: &apos;org.apache.cassandra.db.compaction.LeveledCompactionStrategy&apos;}</Compaction>
+      <Compression>{&apos;chunk_length_in_kb&apos;: &apos;64&apos;, &apos;class&apos;: &apos;org.apache.cassandra.io.compress.LZ4Compressor&apos;}</Compression>
+      <DclocalReadRepairChance>0.1</DclocalReadRepairChance>
+      <SpeculativeRetry>NONE</SpeculativeRetry>
+    </table>
+    <table id="21" parent="8" name="cis_order_wal">
+      <Caching>{&apos;keys&apos;: &apos;ALL&apos;, &apos;rows_per_partition&apos;: &apos;NONE&apos;}</Caching>
+      <Compaction>{&apos;class&apos;: &apos;org.apache.cassandra.db.compaction.TimeWindowCompactionStrategy&apos;, &apos;compaction_window_size&apos;: &apos;1&apos;, &apos;compaction_window_unit&apos;: &apos;DAYS&apos;, &apos;max_threshold&apos;: &apos;32&apos;, &apos;min_threshold&apos;: &apos;4&apos;}</Compaction>
+      <Compression>{&apos;chunk_length_in_kb&apos;: &apos;64&apos;, &apos;class&apos;: &apos;org.apache.cassandra.io.compress.LZ4Compressor&apos;}</Compression>
+      <DclocalReadRepairChance>0.0</DclocalReadRepairChance>
+      <DefaultTimeToLive>3196800</DefaultTimeToLive>
+      <SpeculativeRetry>NONE</SpeculativeRetry>
+    </table>
+    <table id="22" parent="8" name="cvs_rate_limits">
+      <Caching>{&apos;keys&apos;: &apos;NONE&apos;, &apos;rows_per_partition&apos;: &apos;NONE&apos;}</Caching>
+      <Compaction>{&apos;class&apos;: &apos;org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy&apos;, &apos;max_threshold&apos;: &apos;32&apos;, &apos;min_threshold&apos;: &apos;4&apos;}</Compaction>
+      <Compression>{&apos;chunk_length_in_kb&apos;: &apos;64&apos;, &apos;class&apos;: &apos;org.apache.cassandra.io.compress.LZ4Compressor&apos;}</Compression>
+      <DclocalReadRepairChance>0.1</DclocalReadRepairChance>
+      <SpeculativeRetry>NONE</SpeculativeRetry>
+      <MaxIndexInterval>4096</MaxIndexInterval>
+      <MinIndexInterval>256</MinIndexInterval>
+    </table>
+    <table id="23" parent="8" name="requests">
+      <Caching>{&apos;keys&apos;: &apos;NONE&apos;, &apos;rows_per_partition&apos;: &apos;NONE&apos;}</Caching>
+      <Compaction>{&apos;class&apos;: &apos;org.apache.cassandra.db.compaction.TimeWindowCompactionStrategy&apos;, &apos;compaction_window_size&apos;: &apos;1&apos;, &apos;compaction_window_unit&apos;: &apos;DAYS&apos;, &apos;max_threshold&apos;: &apos;32&apos;, &apos;min_threshold&apos;: &apos;4&apos;}</Compaction>
+      <Compression>{&apos;chunk_length_in_kb&apos;: &apos;64&apos;, &apos;class&apos;: &apos;org.apache.cassandra.io.compress.LZ4Compressor&apos;}</Compression>
+      <DclocalReadRepairChance>0.0</DclocalReadRepairChance>
+      <DefaultTimeToLive>15552000</DefaultTimeToLive>
+      <SpeculativeRetry>NONE</SpeculativeRetry>
+    </table>
+    <table id="24" parent="8" name="schema_migration">
+      <Caching>{&apos;keys&apos;: &apos;ALL&apos;, &apos;rows_per_partition&apos;: &apos;NONE&apos;}</Caching>
+      <Compaction>{&apos;class&apos;: &apos;org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy&apos;, &apos;max_threshold&apos;: &apos;32&apos;, &apos;min_threshold&apos;: &apos;4&apos;}</Compaction>
+      <Compression>{&apos;chunk_length_in_kb&apos;: &apos;64&apos;, &apos;class&apos;: &apos;org.apache.cassandra.io.compress.LZ4Compressor&apos;}</Compression>
+      <DclocalReadRepairChance>0.1</DclocalReadRepairChance>
+    </table>
+    <table id="25" parent="8" name="ser_devices">
+      <BloomFilterFpChance>0.1</BloomFilterFpChance>
+      <Caching>{&apos;keys&apos;: &apos;ALL&apos;, &apos;rows_per_partition&apos;: &apos;1&apos;}</Caching>
+      <Compaction>{&apos;class&apos;: &apos;org.apache.cassandra.db.compaction.LeveledCompactionStrategy&apos;}</Compaction>
+      <Compression>{&apos;chunk_length_in_kb&apos;: &apos;64&apos;, &apos;class&apos;: &apos;org.apache.cassandra.io.compress.LZ4Compressor&apos;}</Compression>
+      <DclocalReadRepairChance>0.1</DclocalReadRepairChance>
+      <SpeculativeRetry>NONE</SpeculativeRetry>
+    </table>
+    <table id="26" parent="8" name="ser_organisations">
+      <BloomFilterFpChance>0.1</BloomFilterFpChance>
+      <Caching>{&apos;keys&apos;: &apos;ALL&apos;, &apos;rows_per_partition&apos;: &apos;1&apos;}</Caching>
+      <Compaction>{&apos;class&apos;: &apos;org.apache.cassandra.db.compaction.LeveledCompactionStrategy&apos;}</Compaction>
+      <Compression>{&apos;chunk_length_in_kb&apos;: &apos;64&apos;, &apos;class&apos;: &apos;org.apache.cassandra.io.compress.LZ4Compressor&apos;}</Compression>
+      <DclocalReadRepairChance>0.1</DclocalReadRepairChance>
+      <SpeculativeRetry>NONE</SpeculativeRetry>
+    </table>
+    <key id="27" parent="17" name="primary key">
+      <Columns>code
+</Columns>
+    </key>
+    <column id="28" parent="17" name="code">
+      <Position>1</Position>
+      <DataType>ascii|0s</DataType>
+    </column>
+    <column id="29" parent="17" name="groups">
+      <Position>2</Position>
+      <DataType>frozen&lt;list&lt;smallint&gt;&gt;|0s</DataType>
+    </column>
+    <column id="30" parent="17" name="internal_id">
+      <Position>3</Position>
+      <DataType>ascii|0s</DataType>
+    </column>
+    <column id="31" parent="17" name="order_id">
+      <Position>4</Position>
+      <DataType>ascii|0s</DataType>
+    </column>
+    <column id="32" parent="17" name="participant_id">
+      <Position>5</Position>
+      <DataType>ascii|0s</DataType>
+    </column>
+    <column id="33" parent="17" name="type">
+      <Position>6</Position>
+      <DataType>tinyint|0s</DataType>
+    </column>
+    <key id="34" parent="18" name="primary key">
+      <Columns>c
+</Columns>
+    </key>
+    <column id="35" parent="18" name="c">
+      <Position>1</Position>
+      <DataType>ascii|0s</DataType>
+    </column>
+    <column id="36" parent="18" name="g">
+      <Position>2</Position>
+      <DataType>smallint|0s</DataType>
+    </column>
+    <column id="37" parent="18" name="o">
+      <Position>3</Position>
+      <DataType>bigint|0s</DataType>
+    </column>
+    <column id="38" parent="18" name="oms_id">
+      <Position>4</Position>
+      <DataType>ascii|0s</DataType>
+    </column>
+    <column id="39" parent="18" name="oms_order_id">
+      <Position>5</Position>
+      <DataType>ascii|0s</DataType>
+    </column>
+    <column id="40" parent="18" name="p">
+      <Position>6</Position>
+      <DataType>ascii|0s</DataType>
+    </column>
+    <column id="41" parent="18" name="s">
+      <Position>7</Position>
+      <DataType>ascii|0s</DataType>
+    </column>
+    <column id="42" parent="18" name="subject_id">
+      <Position>8</Position>
+      <DataType>ascii|0s</DataType>
+    </column>
+    <key id="43" parent="19" name="primary key">
+      <Columns>device_id
+order_id
+code_index|ASC
+</Columns>
+    </key>
+    <column id="44" parent="19" name="device_id">
+      <Position>1</Position>
+      <DataType>ascii|0s</DataType>
+    </column>
+    <column id="45" parent="19" name="order_id">
+      <Position>2</Position>
+      <DataType>bigint|0s</DataType>
+    </column>
+    <column id="46" parent="19" name="code_index">
+      <Position>3</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="47" parent="19" name="code">
+      <Position>4</Position>
+      <DataType>ascii|0s</DataType>
+    </column>
+    <key id="48" parent="20" name="primary key">
+      <Columns>device_id
+order_id|ASC
+</Columns>
+    </key>
+    <column id="49" parent="20" name="device_id">
+      <Position>1</Position>
+      <DataType>ascii|0s</DataType>
+    </column>
+    <column id="50" parent="20" name="order_id">
+      <Position>2</Position>
+      <DataType>bigint|0s</DataType>
+    </column>
+    <column id="51" parent="20" name="business_id">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="52" parent="20" name="code_template">
+      <Position>4</Position>
+      <DataType>ascii|0s</DataType>
+    </column>
+    <column id="53" parent="20" name="code_type">
+      <Position>5</Position>
+      <DataType>tinyint|0s</DataType>
+    </column>
+    <column id="54" parent="20" name="codes_count">
+      <Position>6</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="55" parent="20" name="group_id">
+      <Position>7</Position>
+      <DataType>tinyint|0s</DataType>
+    </column>
+    <column id="56" parent="20" name="last_requested_code_index">
+      <Position>8</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="57" parent="20" name="last_requested_quantity">
+      <Position>9</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="58" parent="20" name="owner_inn">
+      <Position>10</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="59" parent="20" name="participant_id">
+      <Position>11</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="60" parent="20" name="request_time">
+      <Position>12</Position>
+      <DataType>timestamp|0s</DataType>
+    </column>
+    <column id="61" parent="20" name="serial_number_type">
+      <Position>13</Position>
+      <DataType>tinyint|0s</DataType>
+    </column>
+    <column id="62" parent="20" name="status">
+      <Position>14</Position>
+      <DataType>tinyint|0s</DataType>
+    </column>
+    <column id="63" parent="20" name="status_description">
+      <Position>15</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="64" parent="20" name="tags">
+      <Position>16</Position>
+      <DataType>map&lt;text, text&gt;|0s</DataType>
+    </column>
+    <column id="65" parent="20" name="version">
+      <Position>17</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <key id="66" parent="21" name="primary key">
+      <Columns>id
+</Columns>
+    </key>
+    <column id="67" parent="21" name="id">
+      <Position>1</Position>
+      <DataType>uuid|0s</DataType>
+    </column>
+    <column id="68" parent="21" name="state">
+      <Position>2</Position>
+      <DataType>frozen&lt;map&lt;ascii, text&gt;&gt;|0s</DataType>
+    </column>
+    <key id="69" parent="22" name="primary key">
+      <Columns>app
+</Columns>
+    </key>
+    <column id="70" parent="22" name="app">
+      <Position>1</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="71" parent="22" name="current_rps">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="72" parent="22" name="default_rps">
+      <Position>3</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <key id="73" parent="23" name="primary key">
+      <Columns>app_name
+type
+day
+ts|ASC
+</Columns>
+    </key>
+    <column id="74" parent="23" name="app_name">
+      <Position>1</Position>
+      <DataType>ascii|0s</DataType>
+    </column>
+    <column id="75" parent="23" name="type">
+      <Position>2</Position>
+      <DataType>ascii|0s</DataType>
+    </column>
+    <column id="76" parent="23" name="day">
+      <Position>3</Position>
+      <DataType>ascii|0s</DataType>
+    </column>
+    <column id="77" parent="23" name="ts">
+      <Position>4</Position>
+      <DataType>timeuuid|0s</DataType>
+    </column>
+    <column id="78" parent="23" name="instance_id">
+      <Position>5</Position>
+      <DataType>ascii|0s</DataType>
+    </column>
+    <column id="79" parent="23" name="protocol">
+      <Position>6</Position>
+      <DataType>ascii|0s</DataType>
+    </column>
+    <column id="80" parent="23" name="request_binary">
+      <Position>7</Position>
+      <DataType>blob|0s</DataType>
+    </column>
+    <column id="81" parent="23" name="request_http">
+      <Position>8</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="82" parent="23" name="request_id">
+      <Position>9</Position>
+      <DataType>ascii|0s</DataType>
+    </column>
+    <column id="83" parent="23" name="source">
+      <Position>10</Position>
+      <DataType>ascii|0s</DataType>
+    </column>
+    <key id="84" parent="24" name="primary key">
+      <Columns>applied_successful
+version|ASC
+</Columns>
+    </key>
+    <column id="85" parent="24" name="applied_successful">
+      <Position>1</Position>
+      <DataType>boolean|0s</DataType>
+    </column>
+    <column id="86" parent="24" name="version">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="87" parent="24" name="executed_at">
+      <Position>3</Position>
+      <DataType>timestamp|0s</DataType>
+    </column>
+    <column id="88" parent="24" name="script">
+      <Position>4</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="89" parent="24" name="script_name">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <key id="90" parent="25" name="primary key">
+      <Columns>device_id
+</Columns>
+    </key>
+    <column id="91" parent="25" name="device_id">
+      <Position>1</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="92" parent="25" name="addr_city">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="93" parent="25" name="addr_country">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="94" parent="25" name="addr_region">
+      <Position>4</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="95" parent="25" name="addr_street">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="96" parent="25" name="device_type">
+      <Position>6</Position>
+      <DataType>tinyint|0s</DataType>
+    </column>
+    <column id="97" parent="25" name="in_service">
+      <Position>7</Position>
+      <DataType>boolean|0s</DataType>
+    </column>
+    <column id="98" parent="25" name="inn">
+      <Position>8</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="99" parent="25" name="mb_id">
+      <Position>9</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="100" parent="25" name="stand">
+      <Position>10</Position>
+      <DataType>tinyint|0s</DataType>
+    </column>
+    <column id="101" parent="25" name="sw_ver">
+      <Position>11</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="102" parent="25" name="user_email">
+      <Position>12</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="103" parent="25" name="user_name">
+      <Position>13</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="104" parent="25" name="user_phone">
+      <Position>14</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <index id="105" parent="25" name="ser_devices_mb_id_idx">
+      <Columns>mb_id
+</Columns>
+    </index>
+    <key id="106" parent="26" name="primary key">
+      <Columns>inn
+</Columns>
+    </key>
+    <column id="107" parent="26" name="inn">
+      <Position>1</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="108" parent="26" name="ser_name">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="109" parent="26" name="user_email">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="110" parent="26" name="user_name">
+      <Position>4</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="111" parent="26" name="user_phone">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+    </column>
+  </database-model>
+</dataSource>

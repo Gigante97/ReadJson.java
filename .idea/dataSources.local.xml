@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Kaccfylhf" uuid="a9d971b1-485f-4a29-98fc-f1568f67c203">
+      <database-info product="Cassandra" version="3.11.8" jdbc-version="4.2" driver-name="Cassandra JDBC Driver" driver-version="1.4" dbms="CASSANDRA" exact-version="3.11.8" exact-driver-version="1.4">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="schema">
+            <name qname="@" />
+            <name qname="rtng_int01" />
+          </node>
+        </introspection-scope>
+      </schema-mapping>
+    </data-source>
+  </component>
+</project>
